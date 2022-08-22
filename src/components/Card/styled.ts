@@ -15,9 +15,6 @@ export const Container = styled.div`
   img {
     padding: 2rem 1rem;
     width: 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .description {
     padding: 2rem 1rem;
@@ -25,6 +22,34 @@ export const Container = styled.div`
     font-size: 0.8rem;
     padding: 0 1.5rem;
     color: #373737;
+  }
+
+  @media (max-width: 1080px) {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0; */
+    padding: 0;
+    /* background-color: #000; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 3rem 2rem;
+    height: 500px; */
+  }
+  @media (max-width: 720px) {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0; */
+    /* background-color: #000; */
+  }
+  @media (max-width: 490px) {
+    width: 55%;
+    /* margin: 0; */
+    background-color: #000;
   }
 `;
 

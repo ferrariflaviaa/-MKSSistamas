@@ -3,17 +3,22 @@ import { FiShoppingBag } from "react-icons/fi";
 import watch from "../../assets/apple-watch.png";
 import { ButoonAlign, Container, Content } from "./styled";
 
-export const Card = () => {
+interface ICardProps {
+  img: string;
+  name: string;
+  description: string;
+  price: string;
+}
+
+export const Card = ({ img, name, description, price }: ICardProps) => {
   return (
     <Container>
-      <img src={watch} />
+      <img src={img} />
       <Content>
-        <h2>Apple Watch Series 4 GPS</h2>
-        <h3 className="price">R$399</h3>
+        <h2>{name}</h2>
+        <h3 className="price">{price}</h3>
       </Content>
-      <h3 className="description">
-        Redesigned from scratch and completely revised.
-      </h3>
+      <h3 className="description">{description}</h3>
       <ButoonAlign>
         <FiShoppingBag className="icons" />
         <h2>COMPRAR</h2>
