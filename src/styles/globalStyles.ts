@@ -4,8 +4,8 @@ export const GlobalStyles = createGlobalStyle`
 
 
   :root {
-    --background: #f0f2f5;
-    --text-title: #363f5f;
+    --background: #E5E5E5;
+    --text: #2C2C2C;
     --text-body: #969cb3;
     --white: #fff;
   }
@@ -31,7 +31,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   body,input,textarea,button{
-    font-family:'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
   }
   h1,h2,h3,h4,h5,h6,strong{
