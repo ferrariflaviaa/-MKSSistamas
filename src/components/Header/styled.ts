@@ -8,6 +8,15 @@ export const Container = styled.section`
   align-items: center;
   padding: 1rem 3rem;
   background-color: #0f52ba;
+
+  @media (max-width: 490px) {
+    display: flex;
+    padding: 0 1rem;
+
+    img {
+      width: 12rem;
+    }
+  }
 `;
 export const Content = styled.div`
   display: flex;
@@ -20,5 +29,8 @@ export const Content = styled.div`
 
   h5 {
     padding-left: 1rem;
+  }
+  @media (max-width: 490px) {
+    font-size: 1rem;
   }
 `;
