@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  margin: auto;
   width: 250px;
   height: 400px;
   background-color: var(--white);
@@ -35,6 +36,26 @@ export const Container = styled.div`
   }
   @media (max-width: 490px) {
   }
+
+  .buttonAlign {
+    border: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f52ba;
+    padding: 0.5rem;
+    color: var(--white);
+    border-radius: 0 0 16px 16px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    .icons {
+      width: 2rem;
+      height: 1rem;
+    }
+  }
 `;
 
 export const Content = styled.div`
@@ -58,24 +79,5 @@ export const Content = styled.div`
     font-weight: 400;
     line-height: 1.18rem;
     margin-right: 0.5rem;
-  }
-`;
-
-export const ButoonAlign = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #0f52ba;
-  padding: 0.5rem;
-  color: var(--white);
-  border-radius: 0 0 16px 16px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  cursor: pointer;
-
-  .icons {
-    width: 2rem;
-    height: 1rem;
   }
 `;

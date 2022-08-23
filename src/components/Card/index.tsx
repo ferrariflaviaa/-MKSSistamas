@@ -1,19 +1,24 @@
 import { FiShoppingBag } from "react-icons/fi";
 
-import { ButoonAlign, Container, Content } from "./styled";
+import { Container, Content } from "./styled";
 
-interface ICardProps {
-  img: string;
+export interface IDataProps {
+  photo: string;
   name: string;
   description: string;
   price: string;
-  key: string;
+  id: number;
+}
+interface ICardProps {
+  data: IDataProps;
+  handleClick: (data: IDataProps) => void;
 }
 
-export const Card = ({ img, name, description, price, key }: ICardProps) => {
+export const Card = ({ data, handleClick }: ICardProps) => {
+  const { photo, name, description, price, id } = data;
   return (
-    <Container key={key}>
-      <img src={img} />
+    <Container key={id}>
+      <img src={photo} />
       <div className="definitions">
         <Content>
           <h2>{name}</h2>
@@ -21,10 +26,10 @@ export const Card = ({ img, name, description, price, key }: ICardProps) => {
         </Content>
         <h3 className="description">{description}</h3>
       </div>
-      <ButoonAlign>
+      <button className="buttonAlign" onClick={() => handleClick(data)}>
         <FiShoppingBag className="icons" />
-        <h2>COMPRAR</h2>
-      </ButoonAlign>
+        <span>COMPRAR</span>
+      </button>
     </Container>
   );
 };
