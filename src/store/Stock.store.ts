@@ -1,20 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface IListCart {
-  photo: string;
-  name: string;
-  price: string;
-  id: number;
-  quantity: number;
-}
+import { IDataProps } from "../components/Card";
 
-const INITIAL_STATE: IListCart[] = [];
+const INITIAL_STATE: IDataProps[] = [];
 
-const store = createSlice({
+const stock = createSlice({
   name: "cart",
   initialState: INITIAL_STATE,
   reducers: {
-    increment(state, { payload }: PayloadAction<IListCart>) {
+    increment(state, { payload }: PayloadAction<IDataProps>) {
       const existis = state.find((item) => item.id === payload.id);
       if (existis) {
         const edited = state.map((item) =>
@@ -26,9 +20,11 @@ const store = createSlice({
               }
             : item
         );
+        return edited;
       }
-      const newProduct: IListCart = {
+      const newProduct: IDataProps = {
         photo: payload.photo,
+        description: payload.description,
         name: payload.name,
         price: payload.price,
         id: payload.id,
@@ -38,3 +34,6 @@ const store = createSlice({
     },
   },
 });
+
+export const { increment } = stock.actions;
+export default stock.reducer;

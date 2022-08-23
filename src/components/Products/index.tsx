@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { isTemplateExpression } from "typescript";
+import { useDispatch, useSelector } from "react-redux";
 
 import api from "../../services/api";
+import { RootState } from "../../store";
+import { increment } from "../../store/Stock.store";
 import { Card, IDataProps } from "../Card";
 import { Container } from "./styled";
 
@@ -11,7 +13,8 @@ interface IListProducts {
 
 export const Products = () => {
   const [product, setProduct] = useState<IDataProps[]>([]);
-  // const [cart, setCart] = useState<IListCart[]>([]);
+  const dispatch = useDispatch();
+  const cart = useSelector((state: RootState) => state.stock);
 
   useEffect(() => {
     async function loadProducts() {
@@ -51,10 +54,15 @@ export const Products = () => {
   return (
     <>
       <Container>
-        {product.map((products) => {
+        {product.map((product) => {
           return (
             // <article key={products.id}>
-            <Card key={products.id} data={products} handleClick={purchase} />
+            <Card
+              key={product.id}
+              data={product}
+              handleClick={() => dispatch(increment(product))}
+            />
+            // onClick={() => dispatch(increment())}
             // </article>
           );
         })}

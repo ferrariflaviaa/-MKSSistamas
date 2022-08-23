@@ -8,6 +8,7 @@ export interface IDataProps {
   description: string;
   price: string;
   id: number;
+  quantity: number;
 }
 interface ICardProps {
   data: IDataProps;
