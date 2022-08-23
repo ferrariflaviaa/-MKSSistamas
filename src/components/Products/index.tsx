@@ -8,17 +8,10 @@ import { Container } from "./styled";
 interface IListProducts {
   products: IDataProps[];
 }
-interface IListCart {
-  photo: string;
-  name: string;
-  price: string;
-  id: number;
-  quantity: number;
-}
 
 export const Products = () => {
   const [product, setProduct] = useState<IDataProps[]>([]);
-  const [cart, setCart] = useState<IListCart[]>([]);
+  // const [cart, setCart] = useState<IListCart[]>([]);
 
   useEffect(() => {
     async function loadProducts() {
@@ -31,28 +24,28 @@ export const Products = () => {
   }, []);
 
   const purchase = (data: IDataProps) => {
-    const existis = cart.find((item) => item.id === data.id);
-    if (existis) {
-      const edited = cart.map((item) =>
-        item.id === data.id
-          ? {
-              ...item,
-              quantity: item.quantity + 1,
-              price: String(Number(item.price) * (item.quantity + 1)),
-            }
-          : item
-      );
-      setCart(edited);
-    } else {
-      const newProduct: IListCart = {
-        photo: data.photo,
-        name: data.name,
-        price: data.price,
-        id: data.id,
-        quantity: 1,
-      };
-      setCart([...cart, newProduct]);
-    }
+    // const existis = cart.find((item) => item.id === data.id);
+    // if (existis) {
+    //   const edited = cart.map((item) =>
+    //     item.id === data.id
+    //       ? {
+    //           ...item,
+    //           quantity: item.quantity + 1,
+    //           price: String(Number(item.price) * (item.quantity + 1)),
+    //         }
+    //       : item
+    //   );
+    //   setCart(edited);
+    // } else {
+    //   const newProduct: IListCart = {
+    //     photo: data.photo,
+    //     name: data.name,
+    //     price: data.price,
+    //     id: data.id,
+    //     quantity: 1,
+    //   };
+    //   setCart([...cart, newProduct]);
+    // }
   };
 
   return (
