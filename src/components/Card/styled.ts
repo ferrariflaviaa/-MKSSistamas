@@ -8,7 +8,6 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
   border-radius: 16px;
   &:hover {
     box-shadow: 0 0.05rem 1rem rgba(0, 0, 0, 0.13);
@@ -17,8 +16,13 @@ export const Container = styled.div`
     padding: 2rem 1rem;
     width: 10rem;
   }
+
+  .definitions {
+    h3 {
+      padding-top: 1rem;
+    }
+  }
   .description {
-    padding: 2rem 1rem;
     font-weight: 100;
     font-size: 0.8rem;
     padding: 0 1.5rem;
@@ -26,38 +30,16 @@ export const Container = styled.div`
   }
 
   @media (max-width: 1080px) {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* background-color: #000; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 3rem 2rem;
-    height: 500px; */
   }
   @media (max-width: 720px) {
-    width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin: 0; */
-    /* background-color: #000; */
   }
   @media (max-width: 490px) {
-    width: 55%;
-    /* margin: 0; */
-    background-color: #000;
   }
 `;
 
 export const Content = styled.div`
-  padding: 2rem 1rem;
   width: 100%;
   display: flex;
-  margin: 1rem 0 0.5rem 0;
   justify-content: space-between;
   align-items: center;
   padding: 0 1.5rem;
@@ -84,7 +66,6 @@ export const ButoonAlign = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
   background-color: #0f52ba;
   padding: 0.5rem;
   color: var(--white);
