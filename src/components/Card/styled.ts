@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 20%;
+  width: 250px;
+  height: 400px;
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  border-radius: 0.5rem;
-  margin: 3rem 4rem;
+  margin: auto;
+  border-radius: 16px;
   &:hover {
     box-shadow: 0 0.05rem 1rem rgba(0, 0, 0, 0.13);
   }
@@ -29,8 +30,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin: 0; */
-    padding: 0;
+
     /* background-color: #000; */
     /* display: flex;
     flex-direction: column;
@@ -58,7 +58,7 @@ export const Content = styled.div`
   width: 100%;
   display: flex;
   margin: 1rem 0 0.5rem 0;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 0 1.5rem;
   color: var(--text);
@@ -75,6 +75,7 @@ export const Content = styled.div`
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.18rem;
+    margin-right: 0.5rem;
   }
 `;
 
@@ -86,8 +87,8 @@ export const ButoonAlign = styled.div`
   margin-top: 1rem;
   background-color: #0f52ba;
   padding: 0.5rem;
-  border-radius: 0 0 1rem 1rem;
   color: var(--white);
+  border-radius: 0 0 16px 16px;
   font-size: 0.7rem;
   font-weight: 600;
   cursor: pointer;

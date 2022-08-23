@@ -8,15 +8,16 @@ interface ICardProps {
   name: string;
   description: string;
   price: string;
+  key: string;
 }
 
-export const Card = ({ img, name, description, price }: ICardProps) => {
+export const Card = ({ img, name, description, price, key }: ICardProps) => {
   return (
-    <Container>
+    <Container key={key}>
       <img src={img} />
       <Content>
         <h2>{name}</h2>
-        <h3 className="price">{price}</h3>
+        <span className="price">{price}</span>
       </Content>
       <h3 className="description">{description}</h3>
       <ButoonAlign>

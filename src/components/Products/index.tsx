@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import api from "../../services/api";
 import { Card } from "../Card";
+import { Container } from "./styled";
 
 interface IProduct {
   id: string;
@@ -29,19 +30,20 @@ export const Products = () => {
   }, []);
 
   return (
-    <div>
+    <Container>
       {product.map((products) => {
         return (
-          <article key={products.id}>
-            <Card
-              img={`${products.photo}`}
-              name={`${products.name}`}
-              description={`${products.description}`}
-              price={`${products.price}`}
-            />
-          </article>
+          // <article key={products.id}>
+          <Card
+            key={products.id}
+            img={`${products.photo}`}
+            name={`${products.name}`}
+            description={`${products.description}`}
+            price={`${products.price}`}
+          />
+          // </article>
         );
       })}
-    </div>
+    </Container>
   );
 };
