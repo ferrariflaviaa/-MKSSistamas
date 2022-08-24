@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { stat } from "fs";
 import { toUnicode } from "punycode";
 
 import { IDataProps } from "../components/Card";
@@ -64,8 +65,12 @@ const stock = createSlice({
       }
       return existis;
     },
+    finalizePurchase(state) {
+      alert("Finalizado");
+      return [];
+    },
   },
 });
 
-export const { increment, decrement, remove } = stock.actions;
+export const { increment, decrement, remove, finalizePurchase } = stock.actions;
 export default stock.reducer;

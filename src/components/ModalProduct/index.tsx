@@ -4,7 +4,12 @@ import Modal from "react-modal";
 import { useSelector, useDispatch } from "react-redux";
 
 import { RootState } from "../../store";
-import { decrement, increment, remove } from "../../store/Stock.store";
+import {
+  decrement,
+  increment,
+  remove,
+  finalizePurchase,
+} from "../../store/Stock.store";
 import { IDataProps } from "../Card";
 import { CardList, Container } from "./styled";
 
@@ -91,7 +96,9 @@ export const ModalProduct = ({ modalOpen, onRequestClose }: cartModalProps) => {
               <b>R${finalPrice}</b>
             </span>
           </div>
-          <button>Finalizar compra</button>
+          <button onClick={() => dispatch(finalizePurchase())}>
+            Finalizar compra
+          </button>
         </div>
       </Modal>
     </Container>
