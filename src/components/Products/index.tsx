@@ -26,44 +26,16 @@ export const Products = () => {
     loadProducts();
   }, []);
 
-  const purchase = (data: IDataProps) => {
-    // const existis = cart.find((item) => item.id === data.id);
-    // if (existis) {
-    //   const edited = cart.map((item) =>
-    //     item.id === data.id
-    //       ? {
-    //           ...item,
-    //           quantity: item.quantity + 1,
-    //           price: String(Number(item.price) * (item.quantity + 1)),
-    //         }
-    //       : item
-    //   );
-    //   setCart(edited);
-    // } else {
-    //   const newProduct: IListCart = {
-    //     photo: data.photo,
-    //     name: data.name,
-    //     price: data.price,
-    //     id: data.id,
-    //     quantity: 1,
-    //   };
-    //   setCart([...cart, newProduct]);
-    // }
-  };
-
   return (
     <>
       <Container>
         {product.map((product) => {
           return (
-            // <article key={products.id}>
             <Card
               key={product.id}
               data={product}
               handleClick={() => dispatch(increment(product))}
             />
-            // onClick={() => dispatch(increment())}
-            // </article>
           );
         })}
       </Container>

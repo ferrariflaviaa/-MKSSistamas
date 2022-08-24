@@ -21,6 +21,10 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-  ]
+    "src",
+    "jest.config.js",
+    "**/*.ts", "**/*.tsx"
+  ],
+  "exclude": ["node_modules"],
+  "types": ["node", "jest", "@testing-library/jest-dom"]
 }
