@@ -3,22 +3,30 @@ import styled from "styled-components";
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
+
+  .scroll {
+    overflow: scroll;
+  }
 `;
 export const CardList = styled.div`
   width: 100%;
-  max-height: 100px;
   display: flex;
   flex-direction: row;
   margin: 2rem 0.5rem 0;
-  padding: 2rem 0.8rem;
   justify-content: space-between;
   align-items: center;
   background-color: #ffff;
   border-radius: 8px;
 
+  .row-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+  }
+
   img {
     width: 4rem;
-    /* height: 4rem; */
   }
   h2 {
     font-size: 1.2rem;
@@ -27,31 +35,51 @@ export const CardList = styled.div`
     margin-right: 0.5rem;
   }
   .icon-modal {
-    /* width: 2rem; */
     font-size: 1.5rem;
-    position: relative;
-    bottom: 130%;
-    left: 5%;
+    bottom: 50%;
+    left: 2%;
   }
 
   .quantity {
     display: flex;
     flex-direction: column;
-
+    width: 15%;
     span {
       font-size: 0.7rem;
     }
   }
 
   .quantityBox {
-    border: 2px solid var(--background);
-    padding: 0.3rem;
-    border-radius: 3px;
-    color: var(--text);
-    text-align: center;
-    margin-bottom: 1.5rem;
+    border: 0.3px solid var(--background);
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     span {
-      padding-left: 0.3rem;
+      margin: 0.2rem;
+      cursor: pointer;
     }
+  }
+
+  .price-card {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 25%;
+  }
+
+  .icon-card {
+    display: flex;
+    width: 10%;
+    div {
+      bottom: 1.7rem;
+      left: 2rem;
+      position: relative;
+      cursor: pointer;
+    }
+    /* width: 100%; */
+    /* align-items: flex-end;
+    justify-content: center; */
   }
 `;

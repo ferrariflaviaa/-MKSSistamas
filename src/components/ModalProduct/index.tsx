@@ -26,29 +26,39 @@ export const ModalProduct = ({ modalOpen, onRequestClose }: cartModalProps) => {
           <h1>Carrinho de compras</h1>
           <AiFillCloseCircle className="img-modal" onClick={onRequestClose} />
         </div>
-        {cart.map((item) => {
-          return (
-            <CardList>
-              <img src={item.photo} />
-              <h2>{item.name}</h2>
-              <div className="quantity">
-                <span>Qtd:</span>
-                <div className="quantityBox">
-                  <span>- |</span>
-                  <span>{item.quantity}</span>
-                  <span>| +</span>
+        <div className="scroll">
+          {cart.map((item) => {
+            return (
+              <CardList>
+                <div className="row-card">
+                  <img src={item.photo} />
+                  <h2>{item.name}</h2>
                 </div>
-              </div>
-              <h2>
-                <b>R${item.price}</b>
-              </h2>
-              <AiFillCloseCircle
-                className="icon-modal"
-                onClick={onRequestClose}
-              />
-            </CardList>
-          );
-        })}
+                <div className="quantity">
+                  <span>Qtd:</span>
+                  <div className="quantityBox">
+                    <span>- |</span>
+                    <span>{item.quantity}</span>
+                    <span>| +</span>
+                  </div>
+                </div>
+                <div className="price-card">
+                  <h2>
+                    <b>R${item.price}</b>
+                  </h2>
+                </div>
+                <div className="icon-card">
+                  <div>
+                    <AiFillCloseCircle
+                      className="icon-modal"
+                      onClick={onRequestClose}
+                    />
+                  </div>
+                </div>
+              </CardList>
+            );
+          })}
+        </div>
       </Modal>
     </Container>
   );

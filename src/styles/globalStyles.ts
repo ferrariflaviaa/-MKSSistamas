@@ -60,19 +60,22 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
     background: var(--background-Modal);
     outline-style: none;
-    padding: 3rem;
+    padding: 1.5rem;
     position: relative;
     border-radius: 0.24;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 
   .header {
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
   }
    h1{
-    width: 80%;
+    width: 70%;
     color: var(--white);
+    /* font-size: 1.5rem; */
    }
   }
 
