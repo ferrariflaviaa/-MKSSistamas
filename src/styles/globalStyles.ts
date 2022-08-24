@@ -44,7 +44,6 @@ export const GlobalStyles = createGlobalStyle`
   }
  
   .react-modal-overlay {
-    /* background: rgba(0, 0, 0, 0.5); */
     position: fixed;
     top: 0;
     bottom: 0;
@@ -60,30 +59,90 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
     background: var(--background-Modal);
     outline-style: none;
-    padding: 1.5rem;
     position: relative;
     border-radius: 0.24;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    h1{
+      width: 70%;
+      color: var(--white);
+    }
+    
+    .content-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+    button{
+      width: 100%;
+      background-color: #000;
+      padding: 1rem;
+      color: var(--white);
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .total{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      /* background-color: #000; */
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 0.5rem;
+      color: var(--white);
+
+      span{
+      font-size: 1.5rem;
+    }
+    }
   }
-   h1{
-    width: 70%;
-    color: var(--white);
-    /* font-size: 1.5rem; */
-   }
+    
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      height: 85%;
+      padding: 1.4rem;
+      overflow-y: auto;
+      
+    }
+    
+    /* .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 15%;
+    
+    div{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      background-color: #000;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    h1,span{
+      color: var(--white)
+    }
+    span{
+      font-size: 1.5rem;
+    }
+  } */
+
   }
 
   .img-modal{
     width: 2.5rem;
     height: 2.5rem;
     cursor: pointer;
-    /* border-radius: 0.25rem; */
   }
 
   .button-modal{
@@ -100,5 +159,4 @@ export const GlobalStyles = createGlobalStyle`
     filter: brightness(0.7);
   }
   }
-
 `;
