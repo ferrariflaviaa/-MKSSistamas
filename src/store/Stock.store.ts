@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { toUnicode } from "punycode";
 
 import { IDataProps } from "../components/Card";
 
@@ -16,7 +17,9 @@ const stock = createSlice({
             ? {
                 ...item,
                 quantity: item.quantity + 1,
-                price: String(Number(item.price) * (item.quantity + 1)),
+                price: String(
+                  (Number(item.price) / item.quantity) * (item.quantity + 1)
+                ),
               }
             : item
         );
@@ -32,8 +35,37 @@ const stock = createSlice({
       };
       return [...state, newProduct];
     },
+
+    decrement(state, { payload }: PayloadAction<IDataProps>) {
+      const existis = state.find((item) => item.id === payload.id);
+      if (existis && existis.quantity > 1) {
+        const edited = state.map((item) =>
+          item.id === payload.id
+            ? {
+                ...item,
+                quantity: item.quantity - 1,
+                price: String(
+                  (Number(item.price) / item.quantity) * (item.quantity - 1)
+                ),
+              }
+            : item
+        );
+        return edited;
+      }
+      const filtered = state.filter((item) => item.id !== payload.id);
+      return filtered;
+    },
+
+    remove(state, { payload }: PayloadAction<IDataProps>) {
+      const existis = state.find((item) => item.id === payload.id);
+      if (existis) {
+        const filtered = state.filter((item) => item.id !== payload.id);
+        return filtered;
+      }
+      return existis;
+    },
   },
 });
 
-export const { increment } = stock.actions;
+export const { increment, decrement, remove } = stock.actions;
 export default stock.reducer;

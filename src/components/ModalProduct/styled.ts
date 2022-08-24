@@ -43,7 +43,8 @@ export const CardList = styled.div`
   .quantity {
     display: flex;
     flex-direction: column;
-    width: 15%;
+    justify-content: center;
+    width: 20%;
     span {
       font-size: 0.7rem;
     }
@@ -51,7 +52,7 @@ export const CardList = styled.div`
 
   .quantityBox {
     border: 0.3px solid var(--background);
-    padding: 0.2rem 0.6rem;
+    padding: 0.2rem 0.2rem;
     border-radius: 0.4rem;
     display: flex;
     justify-content: center;
@@ -64,17 +65,17 @@ export const CardList = styled.div`
 
   .price-card {
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    /* justify-content: center; */
     width: 25%;
+    margin: 0 0.5rem;
   }
 
   .icon-card {
     display: flex;
-    width: 10%;
+    width: 5%;
     div {
       bottom: 1.7rem;
-      left: 2rem;
+      /* left: 1rem; */
       position: relative;
       cursor: pointer;
     }

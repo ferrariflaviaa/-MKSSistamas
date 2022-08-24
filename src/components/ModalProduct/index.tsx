@@ -1,19 +1,24 @@
 import { useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Modal from "react-modal";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { RootState } from "../../store";
+import { decrement, increment, remove } from "../../store/Stock.store";
+import { IDataProps } from "../Card";
 import { CardList, Container } from "./styled";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 interface cartModalProps {
   modalOpen: boolean;
   onRequestClose: () => void;
+  // handleAddItem: (data: IDataProps) => void;
 }
 
 export const ModalProduct = ({ modalOpen, onRequestClose }: cartModalProps) => {
   const cart = useSelector((state: RootState) => state.stock);
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <Modal
@@ -37,9 +42,9 @@ export const ModalProduct = ({ modalOpen, onRequestClose }: cartModalProps) => {
                 <div className="quantity">
                   <span>Qtd:</span>
                   <div className="quantityBox">
-                    <span>- |</span>
+                    <span onClick={() => dispatch(decrement(item))}>- |</span>
                     <span>{item.quantity}</span>
-                    <span>| +</span>
+                    <span onClick={() => dispatch(increment(item))}>| +</span>
                   </div>
                 </div>
                 <div className="price-card">
@@ -51,7 +56,7 @@ export const ModalProduct = ({ modalOpen, onRequestClose }: cartModalProps) => {
                   <div>
                     <AiFillCloseCircle
                       className="icon-modal"
-                      onClick={onRequestClose}
+                      onClick={() => dispatch(remove(item))}
                     />
                   </div>
                 </div>
