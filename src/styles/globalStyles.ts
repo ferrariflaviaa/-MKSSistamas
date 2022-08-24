@@ -8,6 +8,8 @@ export const GlobalStyles = createGlobalStyle`
     --text: #2C2C2C;
     --text-body: #969cb3;
     --white: #fff;
+    --background-Modal: #0F52BA;
+    --Text-Modal: #000;
   }
 
   html{
@@ -42,32 +44,43 @@ export const GlobalStyles = createGlobalStyle`
   }
  
   .react-modal-overlay {
-    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.5); */
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
+    margin: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .react-modal-content {
-    background: var(--white);
+    height: 100%;
+    background: var(--background-Modal);
+    outline-style: none;
     padding: 3rem;
     position: relative;
     border-radius: 0.24;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+  }
+   h1{
+    width: 80%;
+    color: var(--white);
+   }
   }
 
   .img-modal{
-    width: 400px;
-    height: 400px;
-    border-radius: 0.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    /* border-radius: 0.25rem; */
   }
 
   .button-modal{
