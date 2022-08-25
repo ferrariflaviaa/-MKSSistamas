@@ -89,7 +89,6 @@ export const ModalProduct = ({ modalOpen, onRequestClose }: cartModalProps) => {
               })}
             </div>
           </div>
-          {/* <div className="footer-content"></div> */}
           <div className="total">
             <h1>Total</h1>
             <span>

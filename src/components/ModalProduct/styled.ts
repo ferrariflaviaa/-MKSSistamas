@@ -16,13 +16,16 @@ export const CardList = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: #ffff;
-  border-radius: 8px;
+  border-radius: 1rem;
 
   .row-card {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 50%;
+    img {
+      border-radius: 1rem;
+    }
   }
 
   img {
@@ -65,7 +68,6 @@ export const CardList = styled.div`
 
   .price-card {
     display: flex;
-    /* justify-content: center; */
     width: 25%;
     margin: 0 0.5rem;
   }
@@ -75,12 +77,8 @@ export const CardList = styled.div`
     width: 5%;
     div {
       bottom: 1.7rem;
-      /* left: 1rem; */
       position: relative;
       cursor: pointer;
     }
-    /* width: 100%; */
-    /* align-items: flex-end;
-    justify-content: center; */
   }
 `;
